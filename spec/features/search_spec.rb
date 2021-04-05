@@ -20,6 +20,7 @@ RSpec.describe "As a user" do
 		it "should list information about the first 25 members " do
 			within "#member-0" do
 				expect(page).to have_content "Name: Chan (Fire Nation admiral)"
+				expect(page).to have_xpath("//img[contains(@src,'https://vignette.wikia.nocookie.net/avatar/images/7/76/Bujing.png/revision/latest?cb=20130714152817')]")
 				within "#allies" do
 					expect(page).to have_content "Ozai"
 				end
