@@ -1,7 +1,13 @@
 class NationService
+
+	# def self.get_total
+	# 	response = conn.get("/api/v1/characters?affiliation=#{nation}")
+	# 	json = JSON.parse(response.body, symbolize_names: true)
+	# end
+
 	def self.get_members(nation)
-	  response = conn.get("/api/v1/characters?affiliation=#{nation}")
-	   json = JSON.parse(response.body, symbolize_names: true)
+	  response = conn.get("/api/v1/characters?affiliation=#{nation}&perPage=100")
+	  json = JSON.parse(response.body, symbolize_names: true)
 	end
 	def self.conn
 	  Faraday.new(url: 'https://last-airbender-api.herokuapp.com') do |faraday|
