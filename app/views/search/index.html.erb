@@ -1,7 +1,9 @@
 
 <h2>Total members in this nation: <%= @total_residents %></h2>
-<% @first_25.each do |member| %>
-	<h3><%= member.name %></h3>
+<% @first_25.each_with_index do |member,index| %>
+
+<section id="member-<%= index %>">
+	<h3>Name: <%= member.name %></h3>
 	<h4>Allies:</h4>
 	<section id="allies">
 		<% member.allies.each do |ally| %>
@@ -16,9 +18,9 @@
 	</section>
 	<h4>Affiliations:</h4>
 	<section id="affiliation">
-		<% member.affiliations.each do |affiliation| %>
-			<p><%= affiliation %> %></p>
-		<% end %>
+		<p><%= member.affiliations %></p>
 	</section>
 		<br>
+</section>
+	
 <% end %>

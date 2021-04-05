@@ -18,15 +18,15 @@ RSpec.describe "As a user" do
 		end
 
 		it "should list information about the first 25 members " do
-			within "member-1" do
+			within "#member-0" do
 				expect(page).to have_content "Name: Chan (Fire Nation admiral)"
-				within "allies" do
+				within "#allies" do
 					expect(page).to have_content "Ozai"
 				end
-				within "enemies" do
+				within "#enemies" do
 					expect(page).to have_content "Earth Kingdom"
 				end
-				within "affiliation" do
+				within "#affiliation" do
 					expect(page).to have_content "Fire Nation Navy"
 				end
 			end

@@ -11,7 +11,6 @@ class NationService
 	end
 	def self.conn
 	  Faraday.new(url: 'https://last-airbender-api.herokuapp.com') do |faraday|
-
 	    faraday.adapter Faraday.default_adapter
 	  end
 	end
