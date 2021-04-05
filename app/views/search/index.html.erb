@@ -1,2 +1,24 @@
 
 <h2>Total members in this nation: <%= @total_residents %></h2>
+<% @first_25.each do |member| %>
+	<h3><%= member.name %></h3>
+	<h4>Allies:</h4>
+	<section id="allies">
+		<% member.allies.each do |ally| %>
+			<p><%= ally %></p>
+		<% end %>
+	</section>
+	<h4>Enemies:</h4>
+	<section id="enemies">
+		<% member.enemies.each do |enemy| %>
+			<p><%= enemy %></p>
+		<% end %>
+	</section>
+	<h4>Affiliations:</h4>
+	<section id="affiliation">
+		<% member.affiliations.each do |affiliation| %>
+			<p><%= affiliation %> %></p>
+		<% end %>
+	</section>
+		<br>
+<% end %>
